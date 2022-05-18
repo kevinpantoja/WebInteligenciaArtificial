@@ -1,0 +1,254 @@
+:root{
+    --blanco: white;
+    --claro: #f1faee;
+    --gris__claro: #8d99aedd;
+    --negro: black;
+    --gris__oscuro: #343a40;
+}
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    box-sizing: border-box;
+    transition: all .6s;
+    list-style: none;
+}
+button{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+html{
+    font-size: 20px;
+    /* scroll-behavior: smooth; */
+    background: url("./img/pyramid.gif");
+    color: var(--texto);
+    background-attachment: fixed;
+}
+body{
+    margin: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.seccion__izquierda{
+    width: 70%;
+}
+.seccion__derecha{
+    width: 29%;
+}
+
+/*banner*/
+
+.banner{
+    width: 100%;
+}
+.banner__conjunto{
+    width: 100%;
+    display: grid;
+    grid-template-areas: "peru1 unmsm fisi";
+}
+.banner__peru{
+    grid-area: peru1;
+}
+.banner__unmsm{
+    grid-area: unmsm;
+}
+.banner__fisi{
+    grid-area: fisi;
+}
+.banner__fisi > img,.banner__peru > img,.banner__unmsm > img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/*tabla*/
+
+.contenedor__tabla{
+    overflow-y: auto;
+}
+.tabla{
+    margin-top: 2rem;
+    background-color: var(--claro);
+    border-collapse: separate;
+    border-spacing:  0px;
+    color: var(--gris__oscuro);
+    width: 100%;
+}
+th,td{
+    padding: 0 1rem;
+    border: var(--gris__oscuro) 1px solid;
+}
+th{
+    text-align: center;
+}
+.tabla__semana{
+    max-width: 150px;
+}
+.tabla__tema{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    max-width: 500px;
+}
+.tabla__tema > h2{
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+.tabla__tema > p{
+    font-size: .7rem;
+}
+.tabla__clase{
+    font-size: .8rem;
+    max-width: 150px;
+}
+.tabla__trabajo{
+    max-width: 150px;
+}
+.tabla__logo{
+    width: 50px;
+}
+.clase__elemento{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem .5rem;
+    text-align: center;
+}
+.cabezal{
+    font-size: .9rem;
+    text-transform: uppercase;
+    color: var(--gris__oscuro);
+}
+
+/*informacion*/
+
+.informacion{
+    margin-top: 2rem;
+    padding: 0 1rem 2rem;
+    color: var(--gris__oscuro);
+    background-color: var(--claro);
+}
+.tabla__informacion{
+    border-collapse: separate;
+    border-spacing: 0px;
+    width: 100%;
+}
+.tabla__informacion td{
+    border: none;
+}
+.informacion__titulo{
+    padding-top: 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+.informacion__subtitulo{
+    font-size: 1rem;
+}
+.informacion__texto{
+    font-size: .8rem;
+}
+.informacion__lista > li{
+    font-size: .8rem;
+    font-weight: bold;
+    color: var(--gris__claro);
+    padding-left: 1rem;
+    margin-top: .2rem;
+}
+.informacion__lista > li::before{
+    color: var(--gris__oscuro);
+    font-weight: bold;
+    font-size: 1rem;
+    padding-right: .5rem;
+    content: "»";
+}
+
+/*articulos integrantes*/
+.article{
+    background-color: var(--claro);
+    padding: 2rem 1rem 1rem;
+    margin-top: 2rem;
+}
+.article__titulo{
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding-bottom: .8rem;
+}
+.article__subtitulo{
+    padding-bottom: .4rem;
+    padding-left: .5rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+.article__parrafo{
+    padding-bottom: .4rem;
+    padding-left: .5rem;
+    font-size: .8rem;
+}
+.article__descarga{
+    width: 100px;
+    padding-left: .5rem;
+}
+.article__flex{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.article__flex > div{
+    border-left: var(--gris__oscuro) 1px solid;
+    margin-left: .5rem;
+}
+.article__integrantes{
+    margin-left: 2rem;
+    text-transform: capitalize;
+    font-size: .8rem;
+    padding-top: .3rem;
+}
+.article__integrantes::before{
+    color: var(--gris__oscuro);
+    font-weight: bold;
+    font-size: 1rem;
+    content: "»";
+    position: absolute;
+    transform: translate(-1rem);
+
+}
+.article__imagen{
+    width: 100%;
+    padding: 0 1rem;
+}
+
+
+@media (max-width: 950px) {
+    .article__imagen{
+        padding: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    body{
+        margin: 0;
+    }
+    .seccion__izquierda{
+        width: 100%;
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    .seccion__derecha{
+        width: 100%;
+    }
+    .banner__conjunto{
+        grid-template-areas: "peru1 fisi"
+        "unmsm unmsm";
+        gap: 10px;
+    }
+    .banner__fisi > img,.banner__peru > img,.banner__unmsm > img{
+        height: 200px;
+    }
+}
+
+
+
