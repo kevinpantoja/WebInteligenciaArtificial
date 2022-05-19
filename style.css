@@ -221,16 +221,16 @@ th{
     padding: 0 1rem;
 }
 
+@media (max-width: 1050px) {
+    html{
+        font-size: 18px;
+    }
+}
+
 
 @media (max-width: 950px) {
     .article__imagen{
         padding: 0;
-    }
-}
-
-@media (max-width: 700px) {
-    body{
-        margin: 0;
     }
     .seccion__izquierda{
         width: 100%;
@@ -239,6 +239,12 @@ th{
     }
     .seccion__derecha{
         width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    body{
+        margin: 0;
     }
     .banner__conjunto{
         grid-template-areas: "peru1 fisi"
