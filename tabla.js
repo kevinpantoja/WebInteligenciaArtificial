@@ -9,7 +9,20 @@ const semanas = [
         numero:"2",
         subtitulo: "Fundamentos de la inteligencia artificial",
         tema:"Definición de la Inteligencia Artificial. Máquina inteligente. Diferencia entre sistemas operacionales y sistemas inteligentes. Aplicaciones en la industria y servicios (robótica, planificación, gestión de desperdicios). Test de Turing.",
-        clase: {tipo: "power_point",nombre:"clase 2",link:"https://docs.google.com/presentation/d/1ediU4PRx2BVvWLq7adaVr6uSNTjrsjbO7QcA7Z50aH8/edit?usp=sharing"}
+        clase: {tipo: "power_point",nombre:"clase 2",link:"https://docs.google.com/presentation/d/1ediU4PRx2BVvWLq7adaVr6uSNTjrsjbO7QcA7Z50aH8/edit?usp=sharing"},
+        trabajo:[
+            {
+                tipo: "lisp",
+                nombre: "lisp1",
+                link:"https://drive.google.com/file/d/151Ase5jqztbjs3H892zJ3g0GD-L4bvFd/view?usp=sharing"
+            },
+            {
+                tipo: "lisp",
+                nombre: "lisp2",
+                link:"https://drive.google.com/file/d/1lcriAZJKr9_2zhXJt-pFGdtTMGJP5NT8/view?usp=sharing"
+            }
+        ]
+
     },
     {
         numero:"3",
@@ -92,9 +105,21 @@ for(let i = 0; i < semanas.length; i = i + 1){
         </td>
     `:'<td class="tabla__clase"></td>'
 
-    let elemento_trabajo = datos_fila.hasOwnProperty("trabajo")?
-    `<td class="tabla__trabajo"></td>`:`<td class="tabla__trabajo"></td>`
     
+    let elemento_trabajo = `<td class="tabla__trabajo"></td>`;
+    if(datos_fila.hasOwnProperty("trabajo")){
+        elemento_trabajo = `<td class="tabla__trabajo trabajo__elementos">`;
+        for(let i = 0; i < datos_fila["trabajo"].length; i = i + 1){
+            let elemento = datos_fila["trabajo"][i];
+            elemento_trabajo = elemento_trabajo + 
+            `<a class="clase__elemento" href="${elemento.link}" target="__blank">
+            <img class="tabla__logo" src="./img/icon/${elemento.tipo}.png" alt="${elemento.nombre}" title="${elemento.nombre}">
+            <span>${elemento.nombre}</span>
+            </a>`
+        }
+        elemento_trabajo = elemento_trabajo + `</td>`;
+    }
+
     
     $nuevaFila.innerHTML = `
     <td class="tabla__semana">${datos_fila.numero}</td>

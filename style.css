@@ -1,9 +1,13 @@
 :root{
     --blanco: white;
-    --claro: #f1faee;
+    --claro: #e9ecef;
     --gris__claro: #8d99aedd;
     --negro: black;
+    --negro__transparente: rgba(0, 0, 0, 0.521);
     --gris__oscuro: #343a40;
+    --naranja-medio: #ee964b;
+    --naranja-fuerte: #ca6702;
+
 }
 *{
     padding: 0;
@@ -24,7 +28,7 @@ button{
 html{
     font-size: 20px;
     /* scroll-behavior: smooth; */
-    background: url("./img/pyramid.gif");
+    background: url("./img/fondo_claro.webp");
     color: var(--texto);
     background-attachment: fixed;
 }
@@ -35,7 +39,7 @@ body{
     justify-content: space-between;
 }
 .seccion__izquierda{
-    width: 70%;
+    width: 68%;
 }
 .seccion__derecha{
     width: 29%;
@@ -50,6 +54,7 @@ body{
     width: 100%;
     display: grid;
     grid-template-areas: "peru1 unmsm fisi";
+    position: relative;
 }
 .banner__peru{
     grid-area: peru1;
@@ -65,14 +70,28 @@ body{
     height: 300px;
     object-fit: cover;
 }
+.banner__texto{
+    position: absolute;
+    top: calc(50% - 2rem);
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: var(--negro__transparente);
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--blanco);
+    font-weight: bold;
+}
 
 /*tabla*/
 
 .contenedor__tabla{
+    margin-top: 2rem;
     overflow-y: auto;
+    box-shadow: 6px 4px 8px var(--gris__claro);
 }
 .tabla{
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     background-color: var(--claro);
     border-collapse: separate;
     border-spacing:  0px;
@@ -81,18 +100,20 @@ body{
 }
 th,td{
     padding: 0 1rem;
-    border: var(--gris__oscuro) 1px solid;
+    border-left: var(--gris__claro) 1px solid;
+    border-right: var(--gris__claro) 1px solid;
 }
 th{
     text-align: center;
+    background-color: var(--naranja-fuerte);
 }
 .tabla__semana{
-    max-width: 150px;
+    max-width: 120px;
 }
 .tabla__tema{
     padding-top: .5rem;
     padding-bottom: .5rem;
-    max-width: 500px;
+    max-width: 450px;
 }
 .tabla__tema > h2{
     font-size: 1rem;
@@ -103,13 +124,25 @@ th{
 }
 .tabla__clase{
     font-size: .8rem;
-    max-width: 150px;
+    max-width: 120px;
 }
 .tabla__trabajo{
-    max-width: 150px;
+    max-width: 300px;
+    min-width: 150px;
+}
+.trabajo__elementos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .tabla__logo{
     width: 50px;
+}
+.tabla__trabajo .tabla__logo{
+    width: 30px;
+}
+.tabla__trabajo span{
+    font-size: .8rem;
 }
 .clase__elemento{
     display: flex;
@@ -121,7 +154,7 @@ th{
 .cabezal{
     font-size: .9rem;
     text-transform: uppercase;
-    color: var(--gris__oscuro);
+    color: var(--blanco);
 }
 
 /*informacion*/
@@ -131,10 +164,11 @@ th{
     padding: 0 1rem 2rem;
     color: var(--gris__oscuro);
     background-color: var(--claro);
+    box-shadow: 6px 4px 8px var(--gris__claro);
 }
 .tabla__informacion{
     border-collapse: separate;
-    border-spacing: 0px;
+    border-spacing: 10px;
     width: 100%;
 }
 .tabla__informacion td{
@@ -170,8 +204,37 @@ th{
 /*articulos integrantes*/
 .article{
     background-color: var(--claro);
-    padding: 2rem 1rem 1rem;
+    padding: 3rem 1rem 1rem;
     margin-top: 2rem;
+    position: relative;
+    box-shadow: 6px 4px 8px var(--gris__claro);
+}
+.article2{
+    background-color: var(--claro);
+    padding: 3rem 1rem 1rem;
+    margin-top: 2rem;
+    position: relative;
+}
+.superior{
+    height: 2rem;
+    width: 100%;
+    background-color: var(--naranja-fuerte);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--blanco);
+    padding-top: .5rem;
+}
+.superior2{
+    height: 2rem;
+    background-color: var(--naranja-fuerte);
+    position: absolute;
+    left: -1rem;
+    right: -1rem;
+    top: 0;
+    color: var(--blanco);
+    padding-top: .5rem;
+    padding-left: 2rem;
 }
 .article__titulo{
     text-transform: uppercase;
@@ -196,10 +259,12 @@ th{
 .article__flex{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 0 .3rem;
 }
 .article__flex > div{
     border-left: var(--gris__oscuro) 1px solid;
     margin-left: .5rem;
+    padding-left: .5rem;
 }
 .article__integrantes{
     margin-left: 2rem;
@@ -219,6 +284,80 @@ th{
 .article__imagen{
     width: 100%;
     padding: 0 1rem;
+}
+.enlace__grupos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.article__grupos{
+    padding: .5rem 1rem;
+    border: var(--naranja-medio) 2px solid;
+    background: var(--naranja-medio);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.article__grupos:hover{
+    background-color: var(--blanco);
+}
+.article__grupos:hover > a{
+    color: var(--naranja-medio);
+}
+.article__grupos > a{
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+.desplegar__informacion{
+    color: var(--blanco);
+    font-size: .9rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: none;
+    margin: 0 auto;
+}
+.desplegar__informacion:hover{
+    color: var(--naranja-medio);
+}
+
+
+.footer{
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: var(--gris__oscuro);
+    box-shadow: 6px 4px 8px var(--gris__claro);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.footer > span{
+    width: 100%;
+    text-align: center;
+    color: var(--blanco);
+    font-size: .8rem;
+}
+.linkedin{
+    width: 100%;
+}
+.linkedin div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.linkedin a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    font-size: .8rem;
+    margin: 1rem 2rem;
+}
+.linkedin i{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 @media (max-width: 1050px) {
@@ -240,6 +379,12 @@ th{
     .seccion__derecha{
         width: 100%;
     }
+    .desplegar__informacion{
+        display: block;
+    }
+    .sumilla,.competencia__general{
+        display: none;
+    }
 }
 
 @media (max-width: 700px) {
@@ -255,6 +400,9 @@ th{
         height: 200px;
     }
 }
+
+
+
 
 
 
