@@ -388,6 +388,9 @@ th{
 }
 
 @media (max-width: 700px) {
+    .informacion__general{
+        padding: 3rem 0rem 1rem;
+    }
     body{
         margin: 0;
     }
