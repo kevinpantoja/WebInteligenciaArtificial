@@ -28,6 +28,7 @@ const semanas = [
         numero:"3",
         subtitulo: "Representación de problemas de juego humano – máquina como búsqueda en un espacio de estado",
         tema:"Definición de problemas de la IA como problemas de búsqueda en un espacio de estado. Representación de problemas de juegos humano – máquina.",
+        clase: {tipo: "power_point",nombre:"clase 3",link:"https://docs.google.com/presentation/d/1asMq4eNcIaVgQDdGq7DVKvddUApMEblxBOaOirvlKrU/edit?usp=sharing"},
     },
     {
         numero:"4 y 5",
