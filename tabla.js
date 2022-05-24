@@ -14,12 +14,22 @@ const semanas = [
             {
                 tipo: "lisp",
                 nombre: "lisp1",
-                link:"https://drive.google.com/file/d/151Ase5jqztbjs3H892zJ3g0GD-L4bvFd/view?usp=sharing"
+                link:"https://drive.google.com/file/d/1TGfCO-0Tln2C7s9GKAV8nKnpI_FPUZ20/view?usp=sharing"
             },
             {
                 tipo: "lisp",
                 nombre: "lisp2",
-                link:"https://drive.google.com/file/d/1lcriAZJKr9_2zhXJt-pFGdtTMGJP5NT8/view?usp=sharing"
+                link:"https://drive.google.com/file/d/1PslihSCez8R34cJz7aGWmQ_oUnYcef7T/view?usp=sharing"
+            },
+            {
+                tipo: "lisp",
+                nombre: "lisp3",
+                link:"https://drive.google.com/file/d/1J0SCnP-B1ifebfyzuUgLYpEmQ1pzAwmd/view?usp=sharing"
+            },
+            {
+                tipo: "word",
+                nombre: "sistemas inteligentes",
+                link:"https://docs.google.com/document/d/1LVUZWLURz0dZ9GtYG4ZV_atlKELSNas4L6kFUqhTUww/edit?usp=sharing"
             }
         ]
 

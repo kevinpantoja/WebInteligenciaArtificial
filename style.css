@@ -7,6 +7,7 @@
     --gris__oscuro: #343a40;
     --naranja-medio: #ee964b;
     --naranja-fuerte: #ca6702;
+    --naranja-fuerte-transparente: #ca660281;
 
 }
 *{
@@ -97,6 +98,7 @@ body{
     border-spacing:  0px;
     color: var(--gris__oscuro);
     width: 100%;
+    min-width: 650px;
 }
 th,td{
     padding: 0 1rem;
@@ -360,6 +362,21 @@ th{
     margin-bottom: .5rem;
 }
 
+/*estilos a la barra de navegación*/
+body::-webkit-scrollbar {
+    width: .8rem;            
+}
+body::-webkit-scrollbar-track {
+    background: var(--naranja-fuerte-transparente);    
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--naranja-fuerte-transparente);   
+    border-radius: 1rem;      
+    border: 4px solid white;  
+}
+
+
+/*responsive design*/
 @media (max-width: 1050px) {
     html{
         font-size: 18px;
